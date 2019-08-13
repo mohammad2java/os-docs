@@ -27,7 +27,7 @@
        2) Power off the OS.
 
        3) Now on your VirtualBox(used- Version 6.0.6 r130049 (Qt5.6.2)) 
-       go to Settings -> Network -> and..
+       go to Settings -> Network -> Adapter1 
        a) checked enable network adapter
        b) Attached to : Bridge Adapter
        c) Name: Intel(R) Ethernet connection.
