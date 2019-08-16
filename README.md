@@ -56,6 +56,12 @@ for debian and ubuntu
 
             When this command is run, all available packages are fetched and re-indexed from the locations specified in /etc/apt/sources.list and /etc/apt/sources.list.d/.
 
+
+    0) how to checked installed package in system
+        dpkg -l 'pattern'
+        example :
+        dpkg -l '*mysql*'
+    
     1) for seraching all available package for your system
         apt-cache pkgnames
 
