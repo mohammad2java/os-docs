@@ -93,6 +93,25 @@ how to install downloaded package
     
 
 
+ENVIRONEMENT VARIABLE IN LINUX
+----------------------------------
+
+        1) how to see/check all
+        printenv
+        
+        2) how to see perticular
+        printenv name or echo $name
+        example :
+        a) printenv PATH
+        b) echo $PATH
+        
+        
+        
+        
+
+
+
+
 for more details visit to given url 
 ---------------------------------------
     https://blog.packagecloud.io/eng/2015/03/30/apt-cheat-sheet/
