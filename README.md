@@ -95,10 +95,10 @@ how to install downloaded package
 
 ENVIRONEMENT VARIABLE IN LINUX
 ----------------------------------
+    It is case sensitive ..means PATH and path both are different
 
         1) how to see/check all
-        printenv
-        
+        printenv   
         2) how to see perticular
         printenv name or echo $name
         example :
