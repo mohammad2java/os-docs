@@ -155,6 +155,58 @@ How Docker Works
     sudo systemctl status docker
     sudo systemctl stop docker
     sudo systemctl start docker
+    
+    
+    
+ some operation with existing docker images
+ ------------------------------------------ 
+ 
+how to download docker image from docker hub
+-----------------------------------------------
+    docker pull image-name
+    example: sudo docker pull busybox
+
+how to remove docker image from docker
+-----------------------------------------------
+    docker rmi image-name
+    example: sudo docker rmi busybox
+
+
+how to check existing images in system
+---------------------------------------------
+    sudo docker images
+
+
+how to run images as a container
+-------------------------------
+    sudo docker run image-name
+
+    example :
+    sudo docker run busybox
+
+    run wtih --rm so we can remove container when it stopped
+
+    example:
+    sudo docker run --rm busybox
+
+how to see running container id
+-------------------------------
+    docker ps -a
+
+
+how to stop all running docker container
+-------------------------------------
+    docker system prune
+
+
+how to remove perticualr container
+----------------------------------------
+    docker container rm cc3f2ff51cab cd20b396a061
+    or 
+    docker rm cc3f2ff51cab cd20b396a061
+
+    
+    
 
 
 
