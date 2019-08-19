@@ -126,7 +126,7 @@ DOCKER
 
 DOCKER HUB
 -----------
-it is place where we store docker image and used to setup application anywhere.
+it is place where we store docker image and used to setup application anywhere without worrying the app dependency.
 
 How Docker Works
 ----------------
