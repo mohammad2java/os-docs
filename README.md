@@ -115,6 +115,49 @@ ENVIRONEMENT VARIABLE IN LINUX
 for more details visit to given url 
 ---------------------------------------
     https://blog.packagecloud.io/eng/2015/03/30/apt-cheat-sheet/
+    
+    
+    
+    
+
+DOCKER 
+---------------
+       Docker is a set of platform-as-a-service products that use operating-system-level virtualization to deliver software in packages        called containers
+
+DOCKER HUB
+-----------
+it is place where we store docker image and used to setup application anywhere.
+
+How Docker Works
+----------------
+1) setup docker clinet into machine
+2) create image application along with required dependency 
+3) copy this image to target machine
+4) make setup of application quickly with the help of image .
+
+    
+ DOCKER SETUP on UBUNTU
+ ---------------------------
+
+    1) to get update the repository of packages
+    sudo apt-get update
+
+    2) uninstall exiting old one
+    sudo apt-get remove docker docker-engine docker.io
+
+    3) install new one
+    sudo apt install docker.io
+
+    4) check install version
+    docker --version
+
+    5)start stop status of docker
+    sudo systemctl status docker
+    sudo systemctl stop docker
+    sudo systemctl start docker
+
+
+
 
 
 
