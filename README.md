@@ -209,6 +209,44 @@ how to remove perticualr container
     
 
 
+How to create custom image
+--------------------------------
+    1) create Dockerfile 
+    this file will have set of instruction to build a image file 
+
+    for sample  i used 2 commands
+
+    a) FROM this will use to take base image from dockerhub
+    b) RUN this will execute while running docker containers
+
+    I created Dockerfile and put below command inside file.
+
+    FROM ubuntu
+    RUN apt-get update && apt-get install tree
+
+
+
+    after that i hit docker build command
+
+    2) sudo docker build -t mytree .
+    Note:
+    -t use to give tagname of image . is directory location where Dockerfile will be present.
+
+
+    3) To See build images
+    amir@amir-VirtualBox:~/docker-rnd$ sudo docker images
+    REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
+    mytree              latest              8c240bfdd1ca        About a minute ago   92.1MB
+    ubuntu              latest              a2a15febcdf3        4 days ago           64.2MB
+
+
+
+    4) How to run Images
+    sudo docker run -it imageid/name
+
+    example:
+
+    sudo docker run -it 8c240bfdd1ca
 
 
 
