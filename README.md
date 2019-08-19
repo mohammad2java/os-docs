@@ -249,6 +249,19 @@ How to create custom image
     sudo docker run -it 8c240bfdd1ca
 
 
+how to get running container bash shell
+-----------------------------------------
+    sudo docker exec -it containerId /bin/bash
+
+    Example:
+    amir@amir-VirtualBox:~$ sudo docker exec -it c9669fe22657 /bin/bash
+    root@c9669fe22657:/# ls -l
+
+
+
+how to exit from running container bash shell
+-----------------------------------------
+    exit
 
 
 
