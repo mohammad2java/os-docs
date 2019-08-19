@@ -258,10 +258,66 @@ how to get running container bash shell
     root@c9669fe22657:/# ls -l
 
 
-
 how to exit from running container bash shell
 -----------------------------------------
     exit
 
 
 
+
+
+Dockerfile instruction command
+---------------------------------
+
+1)FROM
+------------
+    This is used to get base template of docker container
+    Example:
+    FROM ubuntu
+    
+2)RUN 
+--------
+    This is used to run command once at build time of images. basically used to install package and created dir structure
+    Example:
+    RUN apt-get update
+    
+3)CMD
+-------
+    This is used to run command everytime when container get started..
+    Example:
+    CMD ls -l
+
+4)ENTRYPOINT
+-------
+    ENTRYPOINT + cant override command from root machine.
+    Example:
+    ENTRYPOINT ls -l
+
+5)COPY
+-------
+    This is used to copy folder/file from machine to container
+    Example:
+    COPY /root/test /root/amir
+6)ADD
+-------
+    ADD =COPY+
+    1)First, you can use a URL instead of a local file / directory. 
+    2)Secondly, you can extract a tar file from the source directly into the destination.
+
+
+7)WORKDIR
+--------------
+    This is used to set default workdir for container
+    Example:
+    WORKDIR /path/to/workdir
+    WORKDIR /a
+    WORKDIR b
+    WORKDIR c
+    
+9)ENV
+--------------
+    This is used to set envirement variable
+    Example:
+    ENV workdir /path/to/workdir
+    ENV workdir=/path/to/workdir
+    
