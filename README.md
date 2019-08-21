@@ -390,4 +390,36 @@ How to configure crontab in linux
 
 
 
+---------------------------------------------------------------------------------------------------------------------------------
+VI EDITOR DOCS
+-------------------------------------------------------------------------------------------------------------------------------
+
+vi editor commands all
+---------------------------------------
+    1) i	Insert at cursor (goes into insert mode)
+    2) a	Write after cursor (goes into insert mode)
+    3) A	Write at the end of line (goes into insert mode)
+    4) ESC	Terminate insert mode
+    5) u	Undo last change
+    6) U	Undo all changes to the entire line
+    7) o	Open a new line (goes into insert mode)
+    8) dd  Delete line
+    9) D	Delete contents of line after the cursor
+    10) C	Delete contents of a line after the cursor and insert new text. Press ESC key to end insertion.
+    11) dw	Delete word
+    12) cw	Change word
+    13) x	Delete character at the cursor
+    14) r	Replace character
+    15) R	Overwrite characters from cursor onward
+    16) s	Substitute one character under cursor continue to insert
+    17) S	Substitute entire line and begin to insert at the beginning of the line
+    18) ~	Change case of individual character
+
+
+vi editor commands (goes into editor mode)
+----------------------------------
+    1) i	Insert at cursor (goes into insert mode)
+    2) a	Write after cursor (goes into insert mode)
+    3) A	Write at the end of line (goes into insert mode)
+    4) o	Open a new line (goes into insert mode)
 
