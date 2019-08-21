@@ -324,7 +324,7 @@ Dockerfile instruction command
     
     
     
-    
+  ---------------------------------------------------------------------------------------------------------------------------------
     
     
 CronJob In Linux
@@ -336,7 +336,7 @@ CronJob In Linux
     mm = minuts (0-59)
     hh = hours (0-23)
     dom = days of months (1-31)
-    mo = minuts (0-59)
+    mo = month	1-12 (or names; see example jan,feb,mar...)
     dow = day of week(0-7  ,7 is Sunday, or use names like Mon,Tue,Wed,Thu,Fri)
     
 Special values in cronjob
@@ -376,17 +376,17 @@ Example:
 
 How to configure crontab in linux
 ---------------------------------
-Each user have their own crontab space to configure cronjob
+    Each user have their own crontab space to configure cronjob
 
-1) to see configured cronjob 
-crontab -l
+    1) to see configured cronjob 
+    crontab -l
 
-2) to modify list
-crontab -e
+    2) to modify list
+    crontab -e
 
-3) to see crontab service is running or not.
-service cron status/start/stop  ( working for ubuntu)
-service crond status/start/stop
+    3) to see crontab service is running or not.
+    service cron status/start/stop  ( working for ubuntu)
+    service crond status/start/stop
 
 
 
