@@ -98,18 +98,50 @@ ENVIRONEMENT VARIABLE IN LINUX
     It is case sensitive ..means PATH and path both are different
 
         1) how to see/check all
-        printenv   
+        a) printenv
+        b)env
+        
         2) how to see perticular
         printenv name or echo $name
         example :
         a) printenv PATH
         b) echo $PATH
         
-        
-        
-        
+     TEMPORARY adding new env variable
+    ----------------------------------
+    command: var_name=var_value
+    example: MYVAR=test123
 
 
+    TEMPORARY modifying env variable
+    ----------------------------------
+    command: var_name=$var_name:var_value
+    example: MYVAR=$MYVAR:test456
+
+
+    TEMPORARY removing env variable
+    ----------------------------------
+    command: unset var_name
+    example: uset MYVAR
+
+
+    PERMANENT adding new env variable
+    ----------------------------------
+    1) open .bashrc file from user's home dir
+    2) write at end one file export var_name='var_value'
+    example: export MYVAR='test123'
+
+
+    PERMANENT modifying env variable
+    ----------------------------------
+    1) open .bashrc file from user's home dir
+    2) write at end one file export var_name=$var_name:'var_value'
+    example: export MYVAR=$MYVAR:'test123'
+
+    PERMANENT removing env variable
+    ----------------------------------
+    1) open .bashrc file from user's home dir
+    2) delete export line of that variable.
 
 
 for more details visit to given url 
