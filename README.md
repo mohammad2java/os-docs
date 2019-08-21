@@ -321,3 +321,73 @@ Dockerfile instruction command
     ENV workdir /path/to/workdir
     ENV workdir=/path/to/workdir
     
+    
+    
+    
+    
+    
+    
+CronJob In Linux
+------------------
+    It Linux Scheduler having five part in complete expression
+    Syntax:  mm hh dom mo dow  commands
+
+    Here
+    mm = minuts (0-59)
+    hh = hours (0-23)
+    dom = days of months (1-31)
+    mo = minuts (0-59)
+    dow = day of week(0-7  ,7 is Sunday, or use names like Mon,Tue,Wed,Thu,Fri)
+    
+Special values in cronjob
+-------------------------
+    1) *  This is use for all possible value.(means every)
+    2) -  This is use for specify range like for mm 00-05 means (00,01,02,03,04,05) 
+    3) /  Thus is use for increment by specify number ...like for mm   ---0/2 means 0,2,4,6,...so minuts
+    4) ,  This is use to tell set of values
+
+
+Command
+--------
+    commands = single or multiple commnd
+    
+    single-command example
+    1) java -jar app.jar 
+    2) java -jar app.jar 
+    
+    Multiple-command example
+    1) java -jar app.jar ; python app.py 
+    2) java -jar app.jar && python app.py
+    
+    Note ; or && both can be use to add multiple in single cronjob && means 2nd will only excute if first run successfully.
+
+commad with log file 
+-----------------------
+    > and >> use to store output of command into log file.
+    > means adding only , not appending with old one
+    >> means adding and appeding with old one.
+    
+    Notes: In Cronjob we use 2>&1 at the end of log file.
+
+Example:
+------------
+    * * * * * date >> /home/amir/cronLog.txt 2>&1
+
+
+How to configure crontab in linux
+---------------------------------
+Each user have their own crontab space to configure cronjob
+
+1) to see configured cronjob 
+crontab -l
+
+2) to modify list
+crontab -e
+
+3) to see crontab service is running or not.
+service cron status/start/stop  ( working for ubuntu)
+service crond status/start/stop
+
+
+
+
