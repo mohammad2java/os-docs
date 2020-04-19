@@ -499,7 +499,7 @@ vi editor commands (goes into editor mode)
     how to connenct os
     ---------------------------
     vagrant ssh
-
+        default user & password is vagrant
 
     how to exit from os
     --------------------------
