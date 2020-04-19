@@ -30,7 +30,7 @@
        go to Settings -> Network -> Adapter1 
        a) checked enable network adapter
        b) Attached to : Bridge Adapter
-       c) Name: Intel(R) Ethernet connection.
+       c) Name: Intel(R) Ethernet connection./Wireless LAN
 
        4) Now start your OS. Run ifconfig /ip a , now the inet address is your IP from enp0s3 section.
        Use this and run it on your putty. Login with your credentials.
@@ -454,4 +454,56 @@ vi editor commands (goes into editor mode)
     2) a	Write after cursor (goes into insert mode)
     3) A	Write at the end of line (goes into insert mode)
     4) o	Open a new line (goes into insert mode)
+
+
+
+
+
+
+##Vagrant software
+--------------------------
+    Vagrant is an open-source software product for building and maintaining portable virtual software development environments, e.g. for     VirtualBox, KVM, Hyper-V, Docker containers, VMware, and AWS.
+    it runs on top of virtul provider (virtualbox or vmware). it simplyfy the setup for virtual os.
+
+    How to Use vagrant
+    --------------
+    1) download the setup exe file. (https://www.vagrantup.com/downloads.html)
+    2) install the vagrant software.
+    3) create seperate folder "called" box.
+    4) go to the folder and hit command:  vagrant init 
+     init command create file called Vagrantfile. open the file and configure guest/target os like 
+     config.vm.box = "bento/ubuntu-16.04"
+    5) to start guest os -- run vagrant up   (it will downlaod the os file vagrant clound and install inside once)
+
+
+    how to check status of vagrant running os
+    ------------------------------------------
+    1) locally inside the box dir  
+    vagrant status
+
+    2) from outside  the box dir
+    vagrant global-status
+
+
+    how to stop vagrant-os
+    -----------------------------
+    vagrant halt  or vagrant halt identifier.
+
+
+    how to destroy the complete vagrant os setup
+    --------------------------------------------------
+    vagrant destroy
+
+    --------------------------------------------
+
+    how to connenct os
+    ---------------------------
+    vagrant ssh
+
+
+    how to exit from os
+    --------------------------
+    vagrant exit
+
+
 
