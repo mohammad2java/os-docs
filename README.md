@@ -504,6 +504,11 @@ vi editor commands (goes into editor mode)
     how to exit from os
     --------------------------
     vagrant exit
+    
+    switch to root user
+    -------------------------
+    sudo su -
 
 
-
+    bydefault VAGRANT_HOME path is ~/.vagrant.d but you can set using env variable of VAGRANT_HOME. 
+    vagrant store all os releated files inside VAGRANT_HOME.
