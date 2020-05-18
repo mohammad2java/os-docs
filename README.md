@@ -143,6 +143,14 @@ ENVIRONEMENT VARIABLE IN LINUX
     1) open .bashrc file from user's home dir
     2) delete export line of that variable.
 
+    GLOBAL PERMANENT env variable
+    ----------------------------------
+    1)sudo touch /etc/profile.d/app_env.sh
+    2)write into file app_env.sh, export var_name=$var_name:'var_value'
+    example: export MYVAR=$MYVAR:'test123'
+
+
+
 
 for more details visit to given url 
 ---------------------------------------
