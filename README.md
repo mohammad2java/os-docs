@@ -159,6 +159,67 @@ for more details visit to given url
     
     
     
+ IPTABLES basic concept
+----------------
+iptables having manay tables like nat,etc and each tables contain multiple filter pipe like like INPUT,FORWARD, PREROUTING,POSTROUTING etc.
+
+HOW IPTABLES DOES WORK
+-----------------------
+ start filtering form 0 to last if packet filtermatch execute the actionCommand and does not search next and doest match execute default actionCommand.
+
+    1) To select other tables except default
+    iptables -t nat 
+
+    to see all entries of tables
+    ---------------------------
+    1) iptables -L   ( for default)
+    2) iptables -t nat -L  ( for nat tables)
+
+    BASIC SYNTAX ( for existing pipe)
+    ---------------
+    IPTABLE_PRE -A PIPE_NME filterCommand  -j actionCommand
+
+    TO append any iptables entry you must use -A PipeName and commandName
+    like 
+    iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080 
+
+    IPTABLE_PRE = iptables -t nat
+    PIPE_NME= PREROUTING
+    filterCommand= -p tcp --dport 80
+    actionCommand = REDIRECT --to-port 8080 
+
+    -A for appending iptables entries
+    -L for showing iptables entries
+    -D  for deleting ip tables entries
+
+    -------------------------------------------------------
+
+    1) displaying all entries of tables nat
+    ------------------------------------------
+    iptables -t nat -L 
+
+
+    2) displaying all entries of tables nat OF PIPE PREROUTING
+    ------------------------------------------
+    iptables -t nat -L PREROUTING
+
+    3) displaying all entries of tables nat OF PIPE PREROUTING OF PERTICULAR POSITION ( FOR EXAMPLE 1)
+    ------------------------------------------
+    iptables -t nat -L PREROUTING 1
+
+    4)same also work for -D ( deleting  command )
+    to delete perticular entries  --example tables nat OF PIPE PREROUTING OF PERTICULAR POSITION ( FOR EXAMPLE 1)
+    -----------------------------------------------------------
+    iptables -t nat -D PREROUTING 1
+
+
+    TO DO OPERATION ON FILTER COMMAND WE MUST USE -j ( jump commnad)
+    ----------------------------------------------------------
+
+    to see the command permission of users
+    ------------------------------------------
+    sudo -lU usrname
+
 
 DOCKER 
 ---------------
