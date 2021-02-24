@@ -746,3 +746,70 @@ conditional statement
 
 
 
+decision conditional
+----------------------------
+		if [ expression1 ] 
+		then 
+		//code 
+		elif [ expression2 ] 
+		then 
+		//code
+		else 
+		//code
+		fi
+
+
+loop conditional
+------------------------------
+	for name in $names
+	do
+	//code like echo $name
+	done
+
+
+while loops
+-----------------
+
+	while [ condition] ;
+	do 
+	//code
+	done
+
+
+
+
+
+Linux function
+--------------------
+
+	function functionName () {  
+		Commands to be executed  
+	}  
+
+	// to call
+	functionName
+
+
+conditional expression
+-----------------------
+	-z string
+	True if the length of string is zero.
+
+	-n string
+	True if the length of string is non-zero.
+
+	string1 == string2
+
+	string1 != string2
+	True if the strings are not equal.
+
+	string1 < string2
+	True if string1 sorts before string2 lexicographically.
+
+	string1 > string2
+	True if string1 sorts after string2 lexicographically.
+
+	arg1 OP arg2 --mainly use for numeric things
+	OP is one of ‘-eq’, ‘-ne’, ‘-lt’, ‘-le’, ‘-gt’, or ‘-ge’.
+
+
