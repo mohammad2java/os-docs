@@ -581,3 +581,164 @@ vi editor commands (goes into editor mode)
 
     bydefault VAGRANT_HOME path is ~/.vagrant.d but you can set using env variable of VAGRANT_HOME. 
     vagrant store all os releated files inside VAGRANT_HOME.
+
+
+
+
+
+Shell Scriping
+======================
+
+In Linux we have many times of interpretor to run linux command/script
+most widly use interpretor called as bash
+location of bash shell is /bin/bash
+
+1) To see the location :  which bash
+/bin/bash
+
+2) to see the all possible names of interpretors
+cat /etc/shells
+
+3) sh is soft link to bash interpretor
+amir@local:/home/amir> which sh
+/usr/bin/sh
+amir@local:/home/amir> ll /usr/bin/sh
+lrwxrwxrwx 1 root root 9 Sep 10  2019 /usr/bin/sh -> /bin/bash
+
+
+# Used to provide comment in bash/shells script
+# This is for qa env 
+
+#! Used to inform the os which interpretor you need to use while executin script.
+#!/bin/bash  --location of bash /bin/bash 
+
+
+
+How to use command line arguments?
+In a Bash Shell, they are used with the reference of the following default-parameters or the special variables.
+
+$0 specifies the name of the script to be invoked.
+$1-$9 stores the names of the first 9 arguments or can be used as the arguments' positions.
+$# specifies the total number (count) of arguments passed to the script.
+$* stores all the command line arguments by joining them together.
+$@ stores the list of arguments as an array.
+$? specifies the process ID of the current script.
+$$ specifies the exit status of the last command or the most recent execution process.
+$! shows ID of the last background job
+
+
+
+Read User Input
+read <variable_name>  
+
+example:
+echo "Enter the user name: "  
+read first_name  
+echo $first_name
+
+
+
+Date Format
+-----------------
+
+date +formatcode
+
+list of code
+------------
+%d  Day of the month (e.g., 01 - 31)
+%m	Month	Number of month (01 to 12 where 01 is January)
+%Y	Year	Displays full year (i.e., YYYY) 2020
+%H	Hour	Hour in 24-hour clock format
+%M	Minutes	Minutes (00 to 59)
+%S	Seconds	Seconds (00 to 59)
+%N	Nanoseconds	Nanoseconds (000000000 to 999999999)
+Example : 2020-02-23
+command: date +%Y-%m-%d
+output: 2021-02-23
+
+Bash Sleep
+---------------
+syntax:
+sleep number[suffix]  
+
+default-suffix is s
+
+like sleep 9 or sleep 9s
+
+suffix list
+------------------------ 
+s - seconds
+m - minutes
+h - hours
+d - days
+
+complex example:
+sleep 2d 9h 5m 55s
+
+
+
+
+     
+	 
+Shell variables
+--------------------
+
+1) how to create
+----------------------
+varName="literals"
+example:
+count=10;  # makesure no space before/after ==
+name="Amir";
+MYDIR="/home/amir/"
+	 
+	 
+2) how to access
+-----------------
+$varName or "$varName"
+
+example;
+echo "The count="$count""
+echo "The count: "$count
+
+amir@localhost:~> count=10;
+amir@localhost:~> echo "The Count="$count
+The Count=10
+amir@localhost:~> echo "The Count="$count""
+The Count=10
+
+
+
+
+Shell command substitution
+--------------------------------
+assigning command_output value into variables called command substitution
+
+how to assign 
+------------------ 
+varName=$(command)   -- recommend one
+varName=`command`    -- can use openquote also not recommended --openquote is not single quote
+
+example
+
+fileList=$(ls)
+echo "List of files: "$fileList
+
+
+how to access
+----------------
+same as variable rules above
+
+
+importing config file
+------------------------
+source /etc/app/myconfig.sh
+
+conditional statement
+--------------------------
+1) decision conditional
+2) loop conditional
+
+
+
+
+
