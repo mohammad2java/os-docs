@@ -583,7 +583,16 @@ vi editor commands (goes into editor mode)
     vagrant store all os releated files inside VAGRANT_HOME.
 
 
-
+	How to Connect Vagrant VM(guest)
+	--------------------------------------
+	there are 2 ways (UBUNTU Tested)
+	1) using port forwarding with local host
+	 bedefault Guest(VM) port :22 forward with Host(Local) with port 2222.
+	 use ip: 127.0.0.1 usr= vagrant pss=vagrant port:2222
+	3) using private ip
+	config.vm.network "private_network", ip: "192.168.33.10"
+	used given ip with usr=vagrant pass=vagrant
+	
 
 
 Shell Scriping
