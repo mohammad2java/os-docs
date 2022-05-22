@@ -827,8 +827,8 @@ conditional expression
 ## Customization in right click options using regedit
 ----------------------------------------------------
 
-right click menu on selected file
----------------------------------
+		1) right click menu on selected file
+		---------------------------------
 		1) open below path
 		Computer\HKEY_CLASSES_ROOT\*\shell\
 		2) rightclick on shell and create new key as <ur option name>
@@ -836,7 +836,7 @@ right click menu on selected file
 		4) double click on command  put command<batfilepath> in value box.
 		5) reboot os
 
-		right click menu inside dir without selection of file
+		2) right click menu inside dir without selection of file
 		-----------------------------------------------------
 		1) open below path
 		Computer\HKEY_CLASSES_ROOT\Directory\Background\shell\
