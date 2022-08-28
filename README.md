@@ -390,7 +390,7 @@ Dockerfile instruction command
 
 4)ENTRYPOINT
 -------
-    ENTRYPOINT + cant override command from root machine.
+    CMD + cant override command from root machine.
     Example:
     ENTRYPOINT ls -l
 
