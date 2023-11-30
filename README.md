@@ -850,14 +850,15 @@ conditional expression
 how to add service using /etc/init.d dir service[tested on REDHAT Enterprise linux]
 ---------------------------------------------------
 
-	1) create <servicename>.sh file with below content and replace few service associated 4 below.
-			SCRIPT=mycmd.sh
-			RUNAS=vagrant
-			PIDFILE=/var/run/myservice.pid
-			LOGFILE=/var/log/myservice.log
-	
-	2) file content 
-			#!/bin/sh
+		
+ 		    1) create <servicename>.sh file with below content and replace few service associated 4 below.
+						SCRIPT=mycmd.sh
+						RUNAS=vagrant
+						PIDFILE=/var/run/myservice.pid
+						LOGFILE=/var/log/myservice.log
+			
+		     2) file content 
+				#!/bin/sh
 			### BEGIN INIT INFO
 			# Provides:          <NAME>
 			# Required-Start:    $local_fs $network $named $time $syslog
