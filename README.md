@@ -849,66 +849,67 @@ conditional expression
 
 how to add service using /etc/init.d dir service[tested on REDHAT Enterprise linux]
 ---------------------------------------------------
-1) create <servicename>.sh file with below content and replace few service associated 4 below.
-		SCRIPT=mycmd.sh
-		RUNAS=vagrant
-		PIDFILE=/var/run/myservice.pid
-		LOGFILE=/var/log/myservice.log
 
-2) file content 
-		#!/bin/sh
-		### BEGIN INIT INFO
-		# Provides:          <NAME>
-		# Required-Start:    $local_fs $network $named $time $syslog
-		# Required-Stop:     $local_fs $network $named $time $syslog
-		# Default-Start:     2 3 4 5
-		# Default-Stop:      0 1 6
-		# Description:       <DESCRIPTION>
-		### END INIT INFO
-		
-		SCRIPT=mycmd.sh
-		RUNAS=vagrant
-		PIDFILE=/var/run/myservice.pid
-		LOGFILE=/var/log/myservice.log
-		
-		start() {
-		  if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
-		    echo 'Service already running' >&2
-		    return 1
-		  fi
-		  echo 'Starting service…' >&2
-		  local CMD="$SCRIPT &> \"$LOGFILE\" & echo \$!"
-		  sudo -c "$CMD" -u $RUNAS > "$PIDFILE"
-		  echo 'Service started' >&2
-		}
-		
-		stop() {
-		  if [ ! -f "$PIDFILE" ] || ! kill -0 $(cat "$PIDFILE"); then
-		    echo 'Service not running' >&2
-		    return 1
-		  fi
-		  echo 'Stopping service…' >&2
-		 sudo kill -9 $(cat "$PIDFILE") && rm -f "$PIDFILE"
-		  echo 'Service stopped' >&2
-		}
-		
-		case "$1" in
-		  start)
-		    start
-		    ;;
-		  stop)
-		    stop
-		    ;;
-		  uninstall)
-		    uninstall
-		    ;;
-		  retart)
-		    stop
-		    start
-		    ;;
-		  *)
-		    echo "Usage: $0 {start|stop|restart|uninstall}"
-		esac
+	1) create <servicename>.sh file with below content and replace few service associated 4 below.
+			SCRIPT=mycmd.sh
+			RUNAS=vagrant
+			PIDFILE=/var/run/myservice.pid
+			LOGFILE=/var/log/myservice.log
 	
- 3)  sudo systemctl daemon-relaod
- 4)  sudo systemctl status/start/stop <servicename>
+	2) file content 
+			#!/bin/sh
+			### BEGIN INIT INFO
+			# Provides:          <NAME>
+			# Required-Start:    $local_fs $network $named $time $syslog
+			# Required-Stop:     $local_fs $network $named $time $syslog
+			# Default-Start:     2 3 4 5
+			# Default-Stop:      0 1 6
+			# Description:       <DESCRIPTION>
+			### END INIT INFO
+			
+			SCRIPT=mycmd.sh
+			RUNAS=vagrant
+			PIDFILE=/var/run/myservice.pid
+			LOGFILE=/var/log/myservice.log
+			
+			start() {
+			  if [ -f /var/run/$PIDNAME ] && kill -0 $(cat /var/run/$PIDNAME); then
+			    echo 'Service already running' >&2
+			    return 1
+			  fi
+			  echo 'Starting service…' >&2
+			  local CMD="$SCRIPT &> \"$LOGFILE\" & echo \$!"
+			  sudo -c "$CMD" -u $RUNAS > "$PIDFILE"
+			  echo 'Service started' >&2
+			}
+			
+			stop() {
+			  if [ ! -f "$PIDFILE" ] || ! kill -0 $(cat "$PIDFILE"); then
+			    echo 'Service not running' >&2
+			    return 1
+			  fi
+			  echo 'Stopping service…' >&2
+			 sudo kill -9 $(cat "$PIDFILE") && rm -f "$PIDFILE"
+			  echo 'Service stopped' >&2
+			}
+			
+			case "$1" in
+			  start)
+			    start
+			    ;;
+			  stop)
+			    stop
+			    ;;
+			  uninstall)
+			    uninstall
+			    ;;
+			  retart)
+			    stop
+			    start
+			    ;;
+			  *)
+			    echo "Usage: $0 {start|stop|restart|uninstall}"
+			esac
+		
+	 3)  sudo systemctl daemon-relaod
+	 4)  sudo systemctl status/start/stop <servicename>
